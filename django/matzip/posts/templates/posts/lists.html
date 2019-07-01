@@ -1,0 +1,86 @@
+{% extends 'posts/base.html'%}
+{% load static %}
+{% load bootstrap_pagination %}
+{% block body %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'posts/css/lists.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+
+
+
+</style>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+                <div class="row">
+                    <h2 class="main-heading wow lightSpeedIn" data-wow-duration="1s">{{ query }}</h2>
+                </div>
+            </div>            
+            {% for contact in contacts %}
+            <section class="main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img-box wow bounceInUp center" data-wow-duration="2s" data-wow-delay="0s">
+                                <img src='{{ contact.new_urls }}'   alt="사진이 없네요ㅠ">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="text-block wow bounceInDown center" data-wow-duration="4s">
+                                <a href="{% url 'posts:detail' contact.id%}">
+                                    <h2>{{ contact.store_name }}</h2>
+                                </a>
+                                <h5>{{ contact.Menu|linebreaksbr }}</h5>
+                                <p>{{ contact.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+            {% bootstrap_paginate contacts range=10 %}
+        </div>
+        <div class="col-md-4">
+            <section class="main fixed">
+                <div id="map" class="p-5 mb-5 bg-light" style="width:400px;height:300px;">
+                    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d44677d1bed65cd83d14bc727df978a"></script>
+                    <script>
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                            mapOption = {
+                                center: new daum.maps.LatLng(37.56499, 126.97594), // 지도의 중심좌표
+                                level: 3, // 지도의 확대 레벨
+                                mapTypeId : daum.maps.MapTypeId.ROADMAP // 지도종류
+                            };
+
+                        // 지도를 생성한다
+                        var map = new daum.maps.Map(mapContainer, mapOption);
+
+
+
+
+
+                    </script>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'posts/js/lists.js'%}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+{% block body %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{% static 'posts/css/searchbar.css' %}">
+<link rel="stylesheet" href="{% static 'posts/css/main.css'%}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="search">
+    <form action="{% url 'posts:lists'%}"  method="get">
+        <input type="text" placeholder="Search..." name="search">
+    </form>
+    <div class="icon"></div>
+</div>
+
+<mg href="#">
+    <span data-text="M">M</span>
+    <span data-text="A">A</span>
+    <span data-text="T">T</span>
+    <span data-text="C">C</span>
+    <span data-text="H">H</span>
+    <span data-text="A">A</span>
+</mg>
+<script src="{% static 'posts/js/searchbar.js'%}"></script>
+{% endblock %}
+<!--<form action="{% url 'pages:dashboard' %}" method="GET" style="visiblity:hidden: ">-->
+<!--  <input type="search" style="text-align: center" autocomplete="off" name="q1" id="q1" required/>-->

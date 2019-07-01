@@ -1,0 +1,8 @@
+body{background:#ffffff}
+.main-heading{width:100%; text-align:center; color:#000; margin:60px;}
+.img-box img{width:100%;}
+.main{display:block; overflow:hidden;}
+.text-block{display:block; color:#000;}
+.text-block h2{color:#b94646;}
+.main{padding:100px 0; width:100%; overflow:hidden;}
+.main.bg-t{width:100%; background:rgba(255, 255, 255, 0.2); padding:120px 0;}

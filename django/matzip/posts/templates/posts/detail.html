@@ -1,0 +1,152 @@
+{% extends 'posts/base.html' %}
+{% load bootstrap4 %}
+
+{% block body %}
+    <div>{% include 'posts/scroll.html' %}</div>
+    <main role="main" class="container d-flex justify-content-center">
+      <div class="row">
+          <!--음식사진 공간-->
+
+          <!--사진아래 모든 정보-->
+          <div class="d-fex flex-column">
+              <div class="d-flex justify-content-center"><!--식당이름제외한 정보들 끝-->
+                  <div class=""> <!--식당정보-->
+                      <tbody class="only-desktop">
+
+                      </tbody>
+                  </div><!--식당정보 끝-->
+                  <div class="d-flex flex-xl-fill p-5 mx-5"> <!--레스토랑상세정보 table을 감싼 div-->
+                      <!--레스토랑상세정보 table-->
+                      <table class="info" >
+                          <tbody>
+                              <tr>
+                                  <th>{{ group.store_name }}</th>
+                                  <td>
+                                      <span> 평균평점 4.0점 </span>
+                                  </td>
+                              </tr>
+
+                              <tr class="only-desktop">
+                                  <th>주소</th>
+                                  <td>{{ group.address }}</td>
+                              </tr>
+
+                              <tr class="only-desktop">
+                                  <th>전화번호</th>
+                                  <td>{{ group.biztel }}</td>
+                              </tr>
+
+                              <tr>
+                                  <th>음식 종류</th>
+                                  <td>
+                                      <span>{{ group.Menu | linebreaksbr }}</span>
+                                  </td>
+                              </tr>
+
+                              <tr>
+                                  <th>가격대</th>
+                                  <td>만원 미만</td>
+                              </tr>
+
+                              <tr>
+                                  <th>주차</th>
+                                  <td>{{ group.convenience }} </td>
+                              </tr>
+
+                              <tr>
+                                  <th style="vertical-align:top;">영업시간</th>
+                                  <td>월-금: 11:30 - 20:20<br> 토: 11:30 - 14:00</td>
+                              </tr>
+
+                              <tr>
+                                  <th style="vertical-align:top;">쉬는시간</th>
+                                  <td>14:00 - 17:00</td>
+                              </tr>
+
+
+                              <tr>
+                                  <th>휴일</th>
+                                  <td>일</td>
+                              </tr>
+
+
+
+                              <tr>
+                                  <th>
+                                      메뉴
+                                  </th>
+
+                                  <td>
+                                      <div class="list-thumb-photos size-small">
+                                          <button class="btn-thumb" onclick="common_ga('PG_RESTAURANT', 'CLICK_MENU')" ng-click="open_menu_picture(0)">
+                                              <img class="center-croping lazy" alt="라하노카레 메뉴 사진 - 경기도 성남시 분당구 서현동 247-4" data-original="https://mp-seoul-image-production-s3.mangoplate.com/186248/313740_1538712056584_42326014_164105941188861_5045196160002563238_n.jpg?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80" src="https://mp-seoul-image-production-s3.mangoplate.com/186248/313740_1538712056584_42326014_164105941188861_5045196160002563238_n.jpg?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" style="display: block;">
+
+                                          </button>
+                                          <button class="btn-thumb" onclick="common_ga('PG_RESTAURANT', 'CLICK_MENU')" ng-click="open_menu_picture(1)">
+                                              <img class="center-croping lazy" alt="라하노카레 메뉴 사진 - 경기도 성남시 분당구 서현동 247-4" data-original="https://mp-seoul-image-production-s3.mangoplate.com/598583_1524717959664499.jpg?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80" src="https://mp-seoul-image-production-s3.mangoplate.com/598583_1524717959664499.jpg?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" style="display: block;">
+
+                                          </button>
+                                          <button class="btn-thumb" onclick="common_ga('PG_RESTAURANT', 'CLICK_MENU')" ng-click="open_menu_picture(2)">
+                                              <img class="center-croping lazy" alt="라하노카레 메뉴 사진 - 경기도 성남시 분당구 서현동 247-4" data-original="https://mp-seoul-image-production-s3.mangoplate.com/186248/313740_1516578734498_157835?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" data-error="https://mp-seoul-image-production-s3.mangoplate.com/web/resources/kssf5eveeva_xlmy.jpg?fit=around|*:*&amp;crop=*:*;*,*&amp;output-format=jpg&amp;output-quality=80" src="https://mp-seoul-image-production-s3.mangoplate.com/186248/313740_1516578734498_157835?fit=around|63:63&amp;crop=63:63;*,*&amp;output-format=jpg&amp;output-quality=80" style="display: block;">
+
+                                          </button>
+                                      </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table><!--레스토랑상세정보 table 끝-->
+                  </div><!--레스토랑상세정보 table을 감싼 div 끝-->
+
+
+
+                  <aside class="col-md-5 blog-sidebar p-1 mx-5">
+                    <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
+                        <h4 class="">평가</h4>
+                        <div>{% include 'posts/star.html' %}</div>
+                    </div>
+
+                    {% if is_rated == 0 %}
+                    <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
+                        <h4 class="">예상평점</h4>
+                        <div>{{my_rate.est | floatformat:2}}</div>
+                    </div>
+                     {% elif is_rated == 1 %}
+                    <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
+                        <h4 class="">나의평가</h4>
+                        <div>{{my_rate}}</div>
+                    </div>
+                    {% endif %}
+
+                      <!--지도공간-->
+                    <div id="map" class="p-5 mb-5 bg-light" style="width:400px;height:300px;">
+                    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d44677d1bed65cd83d14bc727df978a"></script>
+                    <script>
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                            mapOption = {
+                                center: new daum.maps.LatLng(37.56499, 126.97594), // 지도의 중심좌표
+                                level: 3, // 지도의 확대 레벨
+                                mapTypeId : daum.maps.MapTypeId.ROADMAP // 지도종류
+                            };
+
+                        // 지도를 생성한다
+                        var map = new daum.maps.Map(mapContainer, mapOption);
+                    </script>
+                    </div>
+                  </aside><!-- /.blog-sidebar -->
+              </div> <!--식당이름제외한 정보들 끝-->
+          </div><!--사진아래 모든 정보 끝-->
+      </div><!-- /.row -->
+    </main><!-- /.container -->
+
+    <div class="d-flex justify-content-center p-5 mb-5 bg-light rounded">
+        <footer>
+          <p>Site template built for <a href="https://getbootstrap.com/" style="color:#b94646">Bootstrap</a> by <a href="https://github.com/JunTangg/matcha" style="color:#b94646">@MATCHA</a>.</p>
+          <p>
+            <a class="d-flex justify-content-center" href="#" style="color:#b94646">Back to top</a>
+          </p>
+        </footer>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+{% endblock %}

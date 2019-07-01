@@ -1,0 +1,52 @@
+body {
+    margin:0;
+    padding:0;
+    background:#b94646;
+}
+mg {
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:250px;
+    height:60px;
+    padding:0 1rem;
+    line-height:60px;
+    text-align:center;
+    border:2px solid #fff;
+    font-size:30px;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:sans-serif;
+    color:#fff;
+    overflow:hidden;
+}
+mg span  {
+    display:inline-block;
+    transition:0.5s;
+}
+mg span:nth-child(odd):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(100%);
+}
+mg span:nth-child(odd){
+    transform:translateY(-100%);
+}
+mg:hover span:nth-child(odd){
+    transform:translateY(0);
+    color:#fff;
+}
+mg span:nth-child(even):before {
+    content:attr(data-text);
+    position:absolute;
+    transform:translateY(-100%);
+}
+
+mg span:nth-child(even){
+    transform:translateY(100%);
+}
+mg:hover span:nth-child(even){
+    transform:translateY(0);
+    color:#fff;
+}
